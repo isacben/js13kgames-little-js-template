@@ -25,15 +25,16 @@ function gameInit() {
 
     player = new Player(playerInit);
 
+    debugKey = "KeyD"; // press "d" to see debug overlay
+
     // if (!song.playing()) song.play();
 }
 
 function gameUpdate() {
-    if (keyWasPressed("Enter") && !menu.isActive()) {
+    if (keyWasPressed("Escape") && !menu.isActive()) {
         menu.show();
         state = "menu";
-    }
-    if (keyWasPressed("KeyQ") && menu.isActive()) {
+    } else if (keyWasPressed("Escape") && menu.isActive()) {
         menu.hide();
         state = "title";
     }
